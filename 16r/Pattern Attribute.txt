@@ -1,0 +1,143 @@
+small "[a-z]" "[a-z]{10}" "[a-z]{2,8}"
+
+cap   "[A-Z]" "[A-Z]{20}" "[A-Z]+" "[A-Z]{3,7}"
+
+cap and small 
+	"[a-zA-Z]" "[a-zA-Z]+" "[a-zA-Z]{10}" "[a-zA-Z]{3,5}"
+number
+	"[0-9]" "\d" "[0-9]+" "\d+" "[6-9]{10}"
+cap small and number
+	"[a-zA-Z\d]" "[a-zA-Z\d]+" "[a-zA-Z\d]{10}" "[a-zA-Z\d]{2,100}"
+
+small number spaces and special
+	"[a-z\d\s!@#$%&_,]" "[a-z\d\s!@#$%&_,]+" "[a-z\d\s!@#$%&_,]{20}"
+	"[a-z\d\s!@#$%&_,]{8,16}"
+
+cap and spe
+smal and spec
+number spec
+	
+	register
+	 
+	firstname -> only alphabets within range 5 - 10;
+	lastname  -> only alphabets within range 2-8
+	password  -> min len 8 , small , capital , number , special 
+	email     -> [a-z@_\d]+
+------------------------------------------------------------------------------
+
+Multiple Ways to use pattern 
+-----------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./response.html" method="post">
+        <div>
+            <label for="uname"><b>Single Alphabet Pattern</b></label>
+            <br>
+            <input type="text" id="uname" 
+            name="uname" pattern="[abczxy]" 
+            title="only a,b,c,z,x,y characters are allowed and Single Alphabet" 
+            required>
+        </div>
+        <div>
+            <label for="uname"><b>Multiple Alphabets Pattern</b></label>
+            <br>
+            <input type="text" id="uname" 
+            name="uname" pattern="[abc]+" 
+            title="only alphabets allowed" 
+            required>
+        </div>
+
+        <div>
+            <label for="uname"><b>Multiple Alphabets Pattern With Capital letters</b></label>
+            <br>
+            <input type="text" id="uname" 
+            name="uname" pattern="[abcABCCXYZ]+" 
+            title="only alphabets allowed" 
+            required>
+        </div> 
+        <div>
+            <label for="uname"><b>Single Alphabets Pattern With small and capital letters</b></label>
+            <br>
+            <input type="text" id="uname" 
+            name="uname" pattern="[a-zA-Z]" 
+            title="only alphabets allowed" 
+            required>
+        </div>
+
+        <div>
+            <label for="uname"><b>Multiple Alphabets Pattern With small and capital letters</b></label>
+            <br>
+            <input type="text" id="uname" 
+            name="uname" pattern="[a-zA-Z]+" 
+            title="only alphabets allowed" 
+            required>
+        </div>
+        
+        <div>
+            <label for="uname"><b>Multiple Alphabets Pattern With small and capital letters</b></label>
+            <br>
+            <input type="text" id="uname" 
+            name="uname" pattern="[a-zA-Z ]+" 
+            title="only alphabets allowed" 
+            required>
+        </div>
+      
+        <div>
+            <label for="number"><b>Single Number</b></label>
+            <input type="text" name="number" id="number" pattern="[0-9]"
+            title="only single number is allowed" required>
+        </div>
+    
+          <div>
+                <label for="number"><b>Multiple Number</b></label>
+                <input type="text" name="number" id="number" pattern="[0-9]+" title="Multiple Numbers are allowed" required>
+          </div>
+
+          <div>
+            <label for="number"><b>Single Number</b></label>
+            <input type="text" name="numner" id="number" pattern="\d+" required>
+          </div>
+           
+            <div>
+                <label for="numbersAndAlphabets"><b>Numbers And Alphabets</b></label>
+                <br>
+                <input type="text" name="numbersAndAlphabets" id="numbersAndAlphabets" pattern="[a-zA-Z\d ]+" required title="Only Numbers and alphabets , space are allowed">
+            </div>
+             
+
+             <div>
+                <label for="range"><b>Range</b></label>
+                <br>
+                <input type="text" name="range" id="range" pattern="[a-zA-Z0-9\s]{8}" required title="Only 8 characters">
+             </div>
+             <div>
+                <label for="bwrange">BwRange</label>
+                <br>
+                <input type="text" pattern="[a-zA-Z]{2,9}" required title="Range is between 2 to 9 characters">
+             </div>
+             <div>
+                    <label for="spec">Special characters</label>
+                    <input type="text" name="spec" id="spec" pattern="[a-zA-Z!_\d]{10}" required> 
+             </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

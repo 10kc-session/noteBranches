@@ -1,0 +1,7 @@
+-> Basic Structure and Block , inline-block , formatting tags , comments
+-> Table tag , rowspan and colspan 
+-> anchor tag , image tag , audio
+-> bookmarking , iframe 
+-> list -> ol , ul , description list
+-> marquee , video , center , details and summary tag
+-> forms  -> 4 days
